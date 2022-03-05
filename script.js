@@ -101,3 +101,9 @@ function toggleModal() {
     document.body.classList.toggle("modal--open")
 }
 
+
+/* Poster: "https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg"
+Title: "Fast & Furious 6"
+Type: "movie"
+Year: "2013"
+imdbID: "tt1905041" */
