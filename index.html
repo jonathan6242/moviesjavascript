@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a0c5c115e8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner__overlay"></div>
+        <nav>
+            <figure id="logo" onclick="resetInputs()">
+                <i class="fa-solid fa-film"></i>
+                MOVIES
+            </figure>
+            <ul class="nav__links">
+                <li class="nav__link">
+                    <a href="" class="nav__link--anchor 
+                    link__hover-effect
+                    link__hover-effect--white">Home</a>
+                </li>
+                <li class="nav__link">
+                    <a href="" class="nav__link--anchor 
+                    link__hover-effect
+                    link__hover-effect--white">Browse</a>
+                </li>
+                <li class="nav__link">
+                    <a href="" class="nav__link--anchor ">Contact</a>
+                </li>
+            </ul>
+            <i class="fas fa-bars bars" onclick="toggleModal()"></i>
+        </nav>
+        <h1 class="banner__title">Browse our movies</h1>
+        <div class="banner__search--wrapper">
+            <input type="text" class="banner__search" placeholder="Search by title..." onchange="render()">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <div class="row main__row">
+                <div class="main__top">
+                    <h2 class="main__top--title">Search results:</h2>
+                    <div class="main__top--filter">
+                        <h3>Filter by year:</h3>
+                        <input type="number" class="filter" onchange="filterByYear(event)">
+                    </div>
+                </div>
+                <div class="main__data">
+                    <!-- <div class="movie__wrapper">
+                        <div class="movie__card">
+                            <figure class="movie__img--wrapper">
+                                <div class="movie__img--overlay">
+                                    <p>More info <i class="fa-solid fa-arrow-right"></i></p>
+                                </div>
+                                <img src="https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg" alt="" class="movie__img">
+                            </figure>
+                            <div class="movie__description">
+                                <h4 class="movie__title">${movie.Title}</h4>
+                                <h5 class="movie__year">${movie.Year}</h5>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="start">
+                        <figure class="start__img--wrapper">
+                            <img src="./assets/undraw_adventure_map_hnin.svg" alt="">
+                        </figure>
+                        <h4 class="start__title">Get started with Movies.</h4>
+                        <h5 class="start__subtitle">Search for your movie of interest.  </h5>
+                    </div>
+                    <div class="loading-state">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="not-found">
+                        <figure class="not-found__img--wrapper">
+                            <img src="./assets/undraw_web_search_re_efla.svg" alt="">
+                        </figure>
+                        <h4 class="not-found__title">Sorry, we couldn't find what you were looking for.</h4>
+                        <h5 class="not-found__subtitle">Please adjust your search or filter.</h5>
+                        <button class="not-found__reset" onclick="resetInputs()">Reset filter</button>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </main>
+    <div class="modal">
+        <i class="fas fa-times" onclick="toggleModal()"></i>
+        <a class="modal__link
+        link__hover-effect
+        link__hover-effect--red" href="#">Home</a>
+        <a class="modal__link
+        link__hover-effect
+        link__hover-effect--red" href="#">Browse</a>
+        <a class="modal__link
+        link__hover-effect
+        link__hover-effect--red" href="#">Contact</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
