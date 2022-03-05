@@ -45,8 +45,14 @@
                 <div class="main__top">
                     <h2 class="main__top--title">Search results:</h2>
                     <div class="main__top--filter">
-                        <h3>Filter by year:</h3>
-                        <input type="number" class="filter" onchange="filterByYear(event)">
+                        <div class="main__top--display">
+                            <h3>Year of release: <b class="red">N/A</b></h3>
+                            <label class="switch">
+                                <input type="checkbox" onclick="toggleFilter(event)">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <input type="range" min="1900" max="2022" class="filter" onchange="filterByYear(event)">
                     </div>
                 </div>
                 <div class="main__data">

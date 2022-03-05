@@ -3,8 +3,11 @@ const input = document.querySelector('.banner__search');
 const movieList = document.querySelector('.main__data');
 const filterInput = document.querySelector('.filter');
 const searchResults = document.querySelector('.main__top--title');
+const yearOfRelease = document.querySelector('h3');
+const toggleButton = document.querySelector('input[type="checkbox"]');
 
 let dataList;
+let filterOn = false;
 
 async function render() {
     if(input.value === "") {
@@ -26,7 +29,7 @@ async function render() {
     </div>`;
     document.body.classList.toggle('loading');
     let filterString;
-    if(filterInput.value) {
+    if(filterInput.value && filterOn) {
         filterString = `&y=${+filterInput.value}`;
     } else {
         filterString = "";
@@ -52,10 +55,12 @@ async function render() {
     movieList.innerHTML = moviesHTML;
 }
 
-function filterByYear(event) {
-    const year = +event.target.value;
-    if(input.value !== "") {
-        render(year);
+function filterByYear() {
+    if(filterOn) {
+        yearOfRelease.innerHTML = `Year of release:  <b class="red">${filterInput.value}</b>`;
+        if(input.value !== "") {
+            render();
+        }
     }
 }
 
@@ -99,6 +104,16 @@ function resetInputs() {
 
 function toggleModal() {
     document.body.classList.toggle("modal--open")
+}
+
+function toggleFilter(event) {
+    filterOn = event.target.checked;
+    if(filterOn) {
+        filterByYear();
+    } else {
+        yearOfRelease.innerHTML = `Year of release:  <b class="red">N/A</b>`;
+        render();
+    }
 }
 
 
