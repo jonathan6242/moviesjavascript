@@ -7,6 +7,10 @@ const searchResults = document.querySelector('.main__top--title');
 let dataList;
 
 async function render() {
+    if(input.value === "") {
+        resetInputs();
+        return;
+    }
     updateSearchDisplay();
     document.body.classList.remove("no-results");
     movieList.innerHTML = `<div class="loading-state">
@@ -50,7 +54,9 @@ async function render() {
 
 function filterByYear(event) {
     const year = +event.target.value;
-    render(year);
+    if(input.value !== "") {
+        render(year);
+    }
 }
 
 function movieHTML(movie) {
